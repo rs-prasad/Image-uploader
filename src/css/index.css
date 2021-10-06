@@ -61,8 +61,62 @@ body {
   place-content: center;
 }
 
-.upload-photo {
+.upload-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 600px;
+  width: 600px;
+  max-width: 85vw;
+}
+.upload-form .image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 55%;
+  width: 90%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px #111f2b;
+  margin-bottom: 15px;
+}
+.upload-form .image-container .border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: #111f2b dashed 3px;
+  height: 90%;
+  width: 90%;
+  border-radius: 10px;
+}
+.upload-form .image-container .border .image {
+  height: 80%;
+}
+.upload-form .status {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+.upload-form .warning {
   color: red;
+}
+.upload-form #image-input[type=file] {
+  display: none;
+}
+.upload-form .btn {
+  display: inline-block;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 5px;
+  text-transform: capitalize;
+  border-radius: 10px;
+  background-color: #4f88b9;
+  border: none;
+}
+.upload-form .btn:hover {
+  background-color: #2e5474;
 }
 
 /*  error page */

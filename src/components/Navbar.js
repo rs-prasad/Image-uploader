@@ -10,7 +10,7 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </li>
           <li className="navbar__link">
-            <Link to="upload-photo">Upload</Link>
+            <Link to="/upload-photo">Upload</Link>
           </li>
         </ul>
       </nav>

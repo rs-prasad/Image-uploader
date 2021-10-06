@@ -4,6 +4,58 @@
   place-content: center;
 }
 
-.upload-photo {
-  color: red;
+.upload-form {
+  @include place-in-center-flex;
+  flex-direction: column;
+  height: 600px;
+  width: 600px;
+  max-width: 85vw;
+
+  .image-container {
+    @include place-in-center-flex;
+    flex-direction: column;
+    height: 55%;
+    width: 90%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px $color-theme-1;
+    margin-bottom: 15px;
+
+    .border {
+      @include place-in-center-flex;
+      border: $color-theme-1 dashed 3px;
+      height: 90%;
+      width: 90%;
+      border-radius: 10px;
+
+      .image {
+        height: 80%;
+      }
+    }
+  }
+  .status {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  .warning {
+    color: rgb(255, 0, 0);
+  }
+  #image-input[type="file"] {
+    display: none;
+  }
+  .btn {
+    display: inline-block;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 5px;
+    text-transform: capitalize;
+    border-radius: 10px;
+    background-color: lighten($color-theme-1, 40%);
+    border: none;
+
+    &:hover {
+      background-color: lighten($color-theme-1, 20%);
+    }
+  }
 }
