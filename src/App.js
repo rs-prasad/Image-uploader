@@ -5,6 +5,8 @@ import Photo from "./pages/photo/Photo.js";
 import UploadPhoto from "./pages/uploadPhoto/UploadPhoto";
 import Error from "./pages/Error";
 
+import "./css/index.css";
+
 function App() {
   return (
     <div className="App">

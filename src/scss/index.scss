@@ -1,0 +1,25 @@
+@import "variables";
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import "mixins";
+
+body {
+  background-color: var(--background-color-primary);
+  width: 100vw;
+  max-width: 900px;
+  margin: auto;
+  font-family: $font-general;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+/* navbar component */
+@import "navbar";
+/* upload-photo page*/
+@import "upload_photo";
+/*  error page */
+@import "error";

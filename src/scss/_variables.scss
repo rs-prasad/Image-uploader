@@ -1,0 +1,12 @@
+// sass variables
+//heading
+$main-heading: pacifico, Arial, Helvetica, sans-serif;
+$font-general: Arial, Helvetica, sans-serif;
+// colors
+$color-theme-1: #111f2b;
+$border-color-1: lighten($color-theme-1, 40%);
+
+// css variables
+:root {
+  --background-color-primary: white;
+}

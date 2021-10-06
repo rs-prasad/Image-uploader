@@ -1,0 +1,39 @@
+/* scss variables */
+/* css variables */
+:root {
+  --background-color-primary: white;
+}
+
+.error-container {
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+.error {
+  padding: 5%;
+  text-align: center;
+}
+.error__message {
+  font-size: 1.5rem;
+  margin-bottom: 10%;
+}
+.error__icon {
+  color: red;
+  height: 50px;
+}
+.error__button {
+  background-color: #3c6e99;
+  padding: 5px;
+  border-radius: 5px;
+  transition: all 0.5s ease-out;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+}
+.error__button:hover {
+  transform: scale(1.2);
+}
+.error__button a {
+  color: white;
+}
