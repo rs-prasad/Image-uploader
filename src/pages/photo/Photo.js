@@ -21,7 +21,8 @@ const Photo = () => {
   };
 
   useEffect(() => {
-    setTimeout(() => setShowMessage(false), 3000);
+    const timeOut = setTimeout(() => setShowMessage(false), 3000);
+    return () => clearTimeout(timeOut);
   }, [showMessage]);
   useEffect(() => {
     localStorage.setItem("fotografis", JSON.stringify(photoObject));
@@ -45,7 +46,12 @@ const Photo = () => {
           <img src={url} alt={name} className="photo-container__photo" />
         </div>
         <footer className="footer" onMouseLeave={() => setShowReactions(false)}>
-          <button className="like-btn">
+          <button
+            className="like-btn"
+            onClick={() => {
+              setShowReactions(true);
+            }}
+          >
             <i
               className="fas fa-thumbs-up"
               onMouseEnter={() => setShowReactions(true)}

@@ -1,6 +1,6 @@
 .upload-photo-section {
   display: grid;
-  height: 90vh;
+  height: 85vh;
   place-content: center;
 }
 
@@ -28,8 +28,8 @@
       border-radius: 10px;
 
       .image {
-        height: 80%;
-        width: auto;
+        max-height: 80%;
+        max-width: 90%;
       }
     }
   }
