@@ -27,6 +27,7 @@
   &__link {
     @include button;
     background-color: lighten($color-theme-1, 40%);
+    cursor: pointer;
 
     &:hover {
       background-color: lighten($color-theme-1, 20%);

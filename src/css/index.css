@@ -93,6 +93,7 @@ body {
 }
 .upload-form .image-container .border .image {
   height: 80%;
+  width: auto;
 }
 .upload-form .status {
   font-size: 1.2rem;
@@ -118,6 +119,107 @@ body {
 }
 .upload-form .btn:hover {
   background-color: #2e5474;
+}
+
+/* photo page*/
+.section-photo-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 5px 5px 5px;
+  height: 90vh;
+  width: 100%;
+}
+.section-photo-center .photo-container {
+  height: auto;
+}
+.section-photo-center .photo-container .header h3 {
+  border-top: grey solid 1px;
+  padding-top: 5px;
+  font-size: 1.2rem;
+  color: #262626;
+}
+.section-photo-center .photo-container .header p {
+  color: #333333;
+}
+.section-photo-center .photo-container .photo-body::before {
+  position: absolute;
+  content: attr(data-reactions);
+  font-weight: bolder;
+  color: #111f2b;
+  width: 99%;
+  font-size: 1.3rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.658);
+}
+.section-photo-center .photo-container .photo-body .photo-container__photo {
+  width: 100%;
+  margin-bottom: 8px;
+}
+.section-photo-center .photo-container .footer {
+  display: flex;
+  justify-content: space-between;
+  width: 99%;
+  border-bottom: grey solid 1px;
+  padding-bottom: 5px;
+}
+.section-photo-center .photo-container .footer button {
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  color: #111f2b;
+  font-weight: 550;
+  width: 33.333%;
+  height: 30px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+.section-photo-center .photo-container .footer button i {
+  transition: all 0.25s ease-out;
+}
+.section-photo-center .photo-container .footer button i:hover {
+  transform: rotate(45deg);
+}
+.section-photo-center .message {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 50%;
+  left: 50%;
+  font-size: 1.3rem;
+  padding: 5px 15px;
+  border-radius: 10px;
+  color: white;
+  background-color: #2e5474;
+  z-index: -1;
+  transition: all 0.25 ease-out;
+}
+.section-photo-center .show-content {
+  z-index: 2;
+}
+.section-photo-center .reactions {
+  position: absolute;
+}
+
+/* photo_page reactions */
+.reactions {
+  transform: translateY(-50px);
+}
+.reactions ul {
+  display: flex;
+  list-style-type: none;
+  column-gap: 10px;
+  font-size: 1.2rem;
+  padding: 6px 10px;
+  background-color: rgba(255, 255, 255, 0.479);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.reactions ul li {
+  transition: all 0.25s ease;
+}
+.reactions ul li:hover {
+  transform: scale(1.3);
+  transform: translateY(-5px);
 }
 
 /*  error page */

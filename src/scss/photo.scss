@@ -1,0 +1,104 @@
+.section-photo-center {
+  @include place-in-center-flex;
+  padding: 20px 5px 5px 5px;
+  height: 90vh;
+  width: 100%;
+
+  .photo-container {
+    height: auto;
+    .header {
+      h3 {
+        border-top: grey solid 1px;
+        padding-top: 5px;
+        font-size: 1.2rem;
+        color: lighten(black, 15%);
+      }
+      p {
+        color: lighten(black, 20%);
+      }
+    }
+    .photo-body {
+      &::before {
+        position: absolute;
+        content: attr(data-reactions);
+        font-weight: bolder;
+        color: $color-theme-1;
+        width: 99%;
+        font-size: 1.3rem;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.658);
+      }
+      .photo-container__photo {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      width: 99%;
+      border-bottom: grey solid 1px;
+      padding-bottom: 5px;
+      button {
+        text-transform: capitalize;
+        font-size: 1.4rem;
+        color: $color-theme-1;
+        font-weight: 550;
+        width: 33.333%;
+        height: 30px;
+        border: none;
+        background-color: white;
+        cursor: pointer;
+        i {
+          transition: all 0.25s ease-out;
+          &:hover {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+
+  .message {
+    position: absolute;
+    transform: translateX(-50%);
+    top: 50%;
+    left: 50%;
+    font-size: 1.3rem;
+    padding: 5px 15px;
+    border-radius: 10px;
+    color: white;
+    background-color: lighten($color-theme-1, 20%);
+    z-index: -1;
+    transition: all 0.25 ease-out;
+  }
+
+  .show-content {
+    z-index: 2;
+  }
+  .reactions {
+    position: absolute;
+  }
+}
+
+/* photo_page reactions */
+.reactions {
+  transform: translateY(-50px);
+  ul {
+    display: flex;
+    list-style-type: none;
+    column-gap: 10px;
+    font-size: 1.2rem;
+    padding: 6px 10px;
+    background-color: rgba(255, 255, 255, 0.479);
+    border-radius: 10px;
+    cursor: pointer;
+    li {
+      transition: all 0.25s ease;
+      &:hover {
+        transform: scale(1.3);
+        transform: translateY(-5px);
+      }
+    }
+  }
+}

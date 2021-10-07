@@ -11,11 +11,11 @@ const UploadPhoto = () => {
 
   const createObject = (file, url) => {
     const newObject = {
-      id: file.lastModified,
+      id: new Date().getTime(),
       name: file.name,
-      date: file.lastModifiedDate,
+      date: new Date(),
       url: url,
-      reactions: {},
+      reactions: 0,
     };
     setFileObject(newObject);
     setSelected(true);
