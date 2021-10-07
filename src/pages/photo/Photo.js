@@ -1,17 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
 import { BiLink } from "react-icons/bi";
 import Emojis from "./Emojis";
 
 const Photo = () => {
-  let { id: idParams } = useParams();
-  idParams = parseInt(idParams);
-  const photos = JSON.parse(localStorage.getItem("fotografis") || "[]");
-  const photo = photos.find((item) => item.id === idParams);
-
-  const { date, name, url } = photo;
+  const curPhoto = JSON.parse(localStorage.getItem("fotografis") || "{}");
+  const { date, name, url } = curPhoto;
   const [showMessage, setShowMessage] = useState(false);
-  const [reactions, setReactions] = useState(2);
+  const [photoObject, setPhotoObject] = useState(curPhoto);
   const [showReactions, setShowReactions] = useState(false);
 
   const sharePhoto = () => {
@@ -19,10 +14,18 @@ const Photo = () => {
     const currentUrl = window.location.href;
     navigator.clipboard.writeText(currentUrl);
   };
+  const addReaction = () => {
+    let newPhoto = { ...photoObject, reactions: photoObject.reactions + 1 };
+    setPhotoObject(newPhoto);
+    setShowReactions(false);
+  };
 
   useEffect(() => {
     setTimeout(() => setShowMessage(false), 3000);
   }, [showMessage]);
+  useEffect(() => {
+    localStorage.setItem("fotografis", JSON.stringify(photoObject));
+  }, [photoObject]);
 
   return (
     <section className="section-photo-center">
@@ -33,7 +36,11 @@ const Photo = () => {
         </header>
         <div
           className="photo-body"
-          data-reactions={reactions !== 0 ? `${reactions} Reactions` : ""}
+          data-reactions={
+            photoObject.reactions !== 0
+              ? `${photoObject.reactions} Reactions`
+              : ""
+          }
         >
           <img src={url} alt={name} className="photo-container__photo" />
         </div>
@@ -51,11 +58,10 @@ const Photo = () => {
             <i className="fas fa-share-square" onClick={sharePhoto}></i>
           </button>
           <div className={`reactions ${showReactions ? "show-content" : ""}`}>
-            <Emojis reactions={reactions} />
+            <Emojis addReaction={addReaction} />
           </div>
         </footer>
       </section>
-
       <div className={`message ${showMessage ? "show-content" : ""}`}>
         <p>
           <BiLink />

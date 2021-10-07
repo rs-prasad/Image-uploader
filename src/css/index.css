@@ -55,7 +55,7 @@ body {
   color: white;
 }
 
-/* upload-photo page*/
+/* home page*/
 .upload-photo-section {
   display: grid;
   height: 90vh;
@@ -133,6 +133,9 @@ body {
 .section-photo-center .photo-container {
   height: auto;
 }
+.section-photo-center .photo-container .header {
+  margin-bottom: 10px;
+}
 .section-photo-center .photo-container .header h3 {
   border-top: grey solid 1px;
   padding-top: 5px;
@@ -141,6 +144,10 @@ body {
 }
 .section-photo-center .photo-container .header p {
   color: #333333;
+}
+.section-photo-center .photo-container .photo-body {
+  position: relative;
+  display: flex;
 }
 .section-photo-center .photo-container .photo-body::before {
   position: absolute;
@@ -160,7 +167,7 @@ body {
   justify-content: space-between;
   width: 99%;
   border-bottom: grey solid 1px;
-  padding-bottom: 5px;
+  padding: 5px 0px;
 }
 .section-photo-center .photo-container .footer button {
   text-transform: capitalize;

@@ -7,10 +7,10 @@ const Navbar = () => {
         <h2 className="navbar__heading">Fotografis</h2>
         <ul className="navbar__links-container">
           <li className="navbar__link">
-            <Link to="/">Home</Link>
+            <Link to="/">Upload</Link>
           </li>
           <li className="navbar__link">
-            <Link to="/upload-photo">Upload</Link>
+            <Link to="/photo">Photo</Link>
           </li>
         </ul>
       </nav>

@@ -4,7 +4,6 @@ import image from "../../resources/file2.png";
 
 const UploadPhoto = () => {
   const [selected, setSelected] = useState(false);
-  const [picture, setPicture] = useState(image);
   const [fileObject, setFileObject] = useState({});
   const inputFile = useRef("");
   const history = useHistory();
@@ -23,7 +22,6 @@ const UploadPhoto = () => {
 
   const handleChange = () => {
     //converting image file to url
-    let url;
     const file = inputFile.current.files[0];
 
     const reader = new FileReader();
@@ -36,10 +34,8 @@ const UploadPhoto = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // reading and adding current uploaded file
-    const fotografis = JSON.parse(localStorage.getItem("fotografis") || "[]");
-    fotografis.push(fileObject);
-    localStorage.setItem("fotografis", JSON.stringify(fotografis));
-    history.push(`/photo/${fileObject.id}`);
+    localStorage.setItem("fotografis", JSON.stringify(fileObject));
+    history.push("/photo");
   };
 
   return (
