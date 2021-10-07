@@ -4,21 +4,26 @@ import { BiLink } from "react-icons/bi";
 import Emojis from "./Emojis";
 
 const Photo = () => {
-  const [showMessage, setShowMessage] = useState(false);
-
   let { id: idParams } = useParams();
   idParams = parseInt(idParams);
-  // console.log(idParams);
   const photos = JSON.parse(localStorage.getItem("fotografis") || "[]");
   const photo = photos.find((item) => item.id === idParams);
-  //console.log(photo);
 
-  const { date, name, url, reactions } = photo;
-  //console.log(url);
+  const { date, name, url } = photo;
+  const [showMessage, setShowMessage] = useState(false);
+  const [reactions, setReactions] = useState(2);
+  const [showReactions, setShowReactions] = useState(false);
+
+  const sharePhoto = () => {
+    setShowMessage(true);
+    const currentUrl = window.location.href;
+    navigator.clipboard.writeText(currentUrl);
+  };
 
   useEffect(() => {
     setTimeout(() => setShowMessage(false), 3000);
   }, [showMessage]);
+
   return (
     <section className="section-photo-center">
       <section className="photo-container">
@@ -26,24 +31,27 @@ const Photo = () => {
           <h3>{name}</h3>
           <p>{date.slice(0, 10)}</p>
         </header>
-        <div className="photo-body" data-reactions={`${2} Reactions`}>
+        <div
+          className="photo-body"
+          data-reactions={reactions !== 0 ? `${reactions} Reactions` : ""}
+        >
           <img src={url} alt={name} className="photo-container__photo" />
         </div>
-        <footer className="footer">
+        <footer className="footer" onMouseLeave={() => setShowReactions(false)}>
           <button className="like-btn">
-            <i class="fas fa-thumbs-up"></i>
-          </button>
-          <button className="comment-btn">
-            <i class="fas fa-comment-alt"></i>
-          </button>
-          <button className="share-btn">
             <i
-              class="fas fa-share-square"
-              onClick={() => setShowMessage(true)}
+              className="fas fa-thumbs-up"
+              onMouseEnter={() => setShowReactions(true)}
             ></i>
           </button>
-          <div className="reactions show-content">
-            <Emojis />
+          <button className="comment-btn">
+            <i className="fas fa-comment-alt"></i>
+          </button>
+          <button className="share-btn">
+            <i className="fas fa-share-square" onClick={sharePhoto}></i>
+          </button>
+          <div className={`reactions ${showReactions ? "show-content" : ""}`}>
+            <Emojis reactions={reactions} />
           </div>
         </footer>
       </section>

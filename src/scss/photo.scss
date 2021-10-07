@@ -23,14 +23,13 @@
         content: attr(data-reactions);
         font-weight: bolder;
         color: $color-theme-1;
-        width: 99%;
+        width: 98%;
         font-size: 1.3rem;
         text-align: center;
         background-color: rgba(255, 255, 255, 0.658);
       }
       .photo-container__photo {
         width: 100%;
-        margin-bottom: 8px;
       }
     }
     .footer {
@@ -83,8 +82,9 @@
 
 /* photo_page reactions */
 .reactions {
-  transform: translateY(-50px);
-  ul {
+  transform: translateY(-40px) translateX(50px);
+  z-index: -1;
+  .emojis-tab {
     display: flex;
     list-style-type: none;
     column-gap: 10px;
