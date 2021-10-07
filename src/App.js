@@ -19,7 +19,7 @@ function App() {
           <Route path="/upload-photo">
             <UploadPhoto />
           </Route>
-          <Route path="/photo">
+          <Route path="/photo/:id">
             <Photo />
           </Route>
           <Route path="*">

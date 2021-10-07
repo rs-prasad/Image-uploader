@@ -46,6 +46,7 @@ body {
   border-radius: 5px;
   transition: all 0.5s ease-out;
   background-color: #4f88b9;
+  cursor: pointer;
 }
 .navbar__link:hover {
   background-color: #2e5474;
