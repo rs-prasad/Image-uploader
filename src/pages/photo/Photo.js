@@ -71,7 +71,7 @@ const Photo = () => {
       <div className={`message ${showMessage ? "show-content" : ""}`}>
         <p>
           <BiLink />
-          Like copied
+          Link copied
         </p>
       </div>
     </section>
